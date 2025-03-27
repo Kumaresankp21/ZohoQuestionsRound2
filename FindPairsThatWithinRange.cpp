@@ -35,20 +35,13 @@ int main() {
    vector<int> array = {2,5,7,6,3};
    
    for(int i=0;i<n;i++){
-       for(int j=i;j<n;j++){
+       for(int j=0;j<n;j++){
            string str1 = to_string(array[i])+to_string(array[j]);
-           string str2 = to_string(array[j])+to_string(array[i]);
+           string result = evaluate(str1,x,y);
            
-           if(str1==str2){
-               string result1 = evaluate(str1,x,y);
-               if(result1!="-1") cout<<str1<<endl;
-           }
-           else{
-           string result1 = evaluate(str1,x,y);
-           string result2 = evaluate(str2,x,y);
-           if(result1!="-1") cout<<str1<<endl;
-           if(result2!="-1") cout<<str2<<endl;
-           }
+           if(result!="-1") cout<<str1<<endl;
        }
    }
+    
 }
+
